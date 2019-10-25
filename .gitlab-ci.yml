@@ -11,13 +11,6 @@ build:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
 
-  variables:
-    # Configure mysql environment variables (https://hub.docker.com/_/mysql/)
-    Host: mysql
-    User: admin_user
-    Password: P#q3dJ/4
-    Database: wordpress
-
   tags:
     - dev2ops
     
