@@ -17,7 +17,7 @@ build:
     MYSQL_ROOT_PASSWORD: "wPrP80"
     Host: mysql
     User: root
-    Password: 'P#q3dJ/4'
-    Database: 'wordpress'
+    Password: P#q3dJ/4
+    Database: wordpress
   tags:
     - dev2ops
