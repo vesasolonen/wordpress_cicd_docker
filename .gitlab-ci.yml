@@ -16,6 +16,6 @@ build:
 trigger_build:
   stage: deploy
   script:
-    - "curl -X POST -F token=7387359b4e4df97c697691384782ee -F ref=master https://gitlab.labranet.jamk.fi/api/v4/projects/5629/trigger/pipeline"
+    - "curl -X POST -F token=21146029ee7f2751ebe9a808363f80 -F ref=master https://gitlab.labranet.jamk.fi/api/v4/projects/5629/trigger/pipeline"
   tags:
     - dev2ops
