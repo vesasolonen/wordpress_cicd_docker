@@ -10,8 +10,6 @@ build:
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
-  services:
-    - mysql:5.7
 
   variables:
     # Configure mysql environment variables (https://hub.docker.com/_/mysql/)
