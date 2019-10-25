@@ -16,6 +16,7 @@ build:
 trigger_build:
   stage: deploy
   script:
+    - "apk add --update curl"
     - "curl -X POST -F token=21146029ee7f2751ebe9a808363f80 -F ref=master https://gitlab.labranet.jamk.fi/api/v4/projects/5629/trigger/pipeline"
   tags:
     - dev2ops
