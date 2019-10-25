@@ -1,3 +1,6 @@
+stages:
+  - build
+  - deploy
 build:
   # Official docker image.
   image: docker:dind
@@ -7,6 +10,8 @@ build:
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
+  tags:
+    - dev2ops
   
   services:
     - mysql:latest
@@ -19,5 +24,12 @@ build:
     User: root
     Password: P#q3dJ/4
     Database: wordpress
+  tags:
+    - dev2ops
+    
+trigger_build:
+  stage: deploy
+  script:
+    - "curl -X POST -F token=TOKEN -F ref=REF_NAME https://gitlab.labranet.jamk.fi/api/v4/projects/5629/trigger/pipeline"
   tags:
     - dev2ops
